@@ -40,6 +40,9 @@ const registerUser = async () => {
   const name = userName.value;
   const email = userEmail.value;
   const age = userAge.value;
+  if (!name && !email && !age) {
+    return;
+  }
   const newUserInfo = { name, email, age };
   const response = await fetch(url, {
     method: "POST",
